@@ -5,7 +5,7 @@ import { BsDiscord } from "react-icons/bs";
 
 const Footer = () => {
     return (
-        <div className="space-y-5">
+        <div className="space-y-5 mt-10">
             <div className="flex items-center gap-1 justify-center">
                 <PiGameControllerFill className="text-[--primary] text-4xl" />
                 <h1 className="text-2xl">Play</h1>

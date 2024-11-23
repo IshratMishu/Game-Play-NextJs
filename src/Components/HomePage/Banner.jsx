@@ -16,7 +16,7 @@ const Banner = () => {
         <div className="bg-cover min-h-[600px] text-white" style={{
             backgroundImage: "linear-gradient(to right, rgba(0, 0, 0, 0.9) 20%, rgba(5, 121, 33, 0.2) 60%), url('/assets/bg1.jpg')"
         }}>
-            <div className="flex max-w-screen-xl mx-auto pt-52 pl-10 items-center justify-between">
+            <div className="flex max-w-screen-xl mx-auto pt-52 pl-20 items-center justify-between">
                 <div className="space-y-4">
                     <h1 className="text-6xl font-semibold">Discover A New <br /> Era Of Cool</h1>
                     <p className="text-5xl font-medium text-[--primary]">
@@ -35,9 +35,9 @@ const Banner = () => {
                 </div>
 
                 <div className="pr-48 pt-20">
-                    <IoPlaySharp onClick={vidPlay} className="border-4 border-[--primary] rounded-full text-7xl p-2 mb-4 shadow-md shadow-black" />
+                    <IoPlaySharp onClick={vidPlay} className="border-4 border-[--primary] rounded-full text-7xl p-2 mb-4 shadow-md shadow-black hover:border-black transition-all duration-200" />
                     <p>HIGHLIGHTS OF 2024</p>
-                    <p>28:50</p>
+                    <p>29:19</p>
                 </div>
             </div>
 

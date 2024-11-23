@@ -8,9 +8,10 @@
   font-family: "Roboto", sans-serif;
 }
 
-/* body {
-  background: #000000F2
-} */
+body {
+  background: black;
+  color: white
+}
 
 :root {
   --primary: #239d39;

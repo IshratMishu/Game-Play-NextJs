@@ -33,7 +33,7 @@ const Navbar = () => {
         },
     ]
     return (
-        <div className="navbar flex justify-between items-center font-semibold fixed text-white left-0 top-10 mx-auto w-full px-10 transition-all duration-200">
+        <div className="navbar flex justify-between items-center font-semibold fixed text-white left-0 top-10 mx-auto w-full px-10 transition-all duration-200 z-50">
             <div className="flex items-center gap-1">
                 <PiGameControllerFill className="text-[--primary] text-2xl" />
                 <h1 >Play</h1>
