@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/Components/shared/Navbar";
 import Footer from "@/Components/shared/Footer";
+import AuthProvider from "@/provider/AuthProvider";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -24,12 +25,14 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-    className="font-roboto" >
-        <Navbar></Navbar>
-       <div>
-       {children}
-       </div>
-       <Footer></Footer>
+        className="font-roboto" >
+        <AuthProvider>
+          <Navbar></Navbar>
+          <div>
+            {children}
+          </div>
+          <Footer></Footer>
+        </AuthProvider>
       </body>
     </html>
   );
