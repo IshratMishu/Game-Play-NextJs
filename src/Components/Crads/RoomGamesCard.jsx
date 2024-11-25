@@ -3,9 +3,10 @@ import { BsDoorClosed } from "react-icons/bs";
 import { GiDuration, GiTabletopPlayers } from "react-icons/gi";
 import { PiFlagBannerFill, PiPuzzlePieceLight } from "react-icons/pi";
 import { LuHelpingHand } from "react-icons/lu";
+import Link from "next/link";
 
 const RoomGamesCard = ({ roomGame }) => {
-    const { price, title, puzzles, equipment, help, players, doors, duration, img } = roomGame;
+    const {_id, price, title, puzzles, equipment, help, players, doors, duration, img } = roomGame;
     return (
         <div>
             <div className="mx-auto max-w-[340px] space-y-3 rounded-lg bg-[#302f2fbf]">
@@ -34,7 +35,7 @@ const RoomGamesCard = ({ roomGame }) => {
                     </div>
                  </div>
                  <hr />
-                 <button className="rounded-lg bg-[--primary] px-4 py-1 font-medium text-white hover:bg-black w-full">Book Now</button>
+                 <Link href={`/roomGames/${_id}`}><button className="rounded-lg bg-[--primary] px-4 py-1 font-medium text-white hover:bg-black w-full mt-3">Book Now</button></Link>
                 </div>
             </div>
         </div>

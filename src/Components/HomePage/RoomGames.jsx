@@ -1,9 +1,10 @@
-
-import { roomGames } from "@/lib/roomGames";
+import { getRoomGames } from "@/lib/roomGames";
 import RoomGamesCard from "../Crads/RoomGamesCard";
 import Link from "next/link";
 
-const RoomGames = () => {
+const RoomGames = async () => {
+    const roomGames =await getRoomGames();
+
     return (
         <div className="mt-16 max-w-screen-xl mx-auto">
             <h1 className="text-center text-4xl font-medium">Let’s Try All Our Room Games</h1>
@@ -11,7 +12,7 @@ const RoomGames = () => {
 
             <div className="grid grid-cols-3 gap-5 mt-10">
                 {
-                    roomGames.slice(0, 3).map(roomGame => <RoomGamesCard key={roomGame._id} roomGame={roomGame}></RoomGamesCard>)
+                    roomGames?.slice(0, 3).map(roomGame => <RoomGamesCard key={roomGame._id} roomGame={roomGame}></RoomGamesCard>)
                 }
             </div>
             <Link href="/roomGames"><button className="rounded-lg hover:bg-[--primary] px-6 py-2 font-medium mt-5 flex mx-auto border border-[--primary]">Explore More</button></Link>

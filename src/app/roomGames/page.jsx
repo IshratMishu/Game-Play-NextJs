@@ -3,13 +3,17 @@ import { BsDoorClosed } from "react-icons/bs";
 import { GiDuration, GiTabletopPlayers } from "react-icons/gi";
 import { PiFlagBannerFill, PiPuzzlePieceLight } from "react-icons/pi";
 import { LuHelpingHand } from "react-icons/lu";
-import { roomGames } from "@/lib/roomGames";
+import Link from "next/link";
+import { getRoomGames } from "@/lib/roomGames";
 
-const page = () => {
+
+const page = async () => {
+    const roomGames =await getRoomGames();
+
     return (
-        <div className="grid grid-cols-3 gap-10 mt-32">
+        <div className="grid grid-cols-3 gap-10 mt-32 max-w-screen-xl mx-auto">
       {
-        roomGames.map(game => <div key={game._id}>
+        roomGames?.map(game => <div key={game._id}>
             <div className="mx-auto max-w-[340px] space-y-3 rounded-lg bg-[#302f2fbf]">
                 <div className="relative flex h-48 w-full justify-center lg:h-[260px]">
                     <div className="absolute left-4 right-4 top-4 flex items-center justify-between">
@@ -36,7 +40,7 @@ const page = () => {
                     </div>
                  </div>
                  <hr />
-                 <button className="rounded-lg bg-[--primary] px-4 py-1 font-medium text-white hover:bg-black w-full">Book Now</button>
+                 <Link href={`/roomGames/${game._id}`}><button className="rounded-lg bg-[--primary] px-4 py-1 font-medium text-white hover:bg-black w-full mt-3">Book Now</button></Link>
                 </div>
             </div>
         </div>)
