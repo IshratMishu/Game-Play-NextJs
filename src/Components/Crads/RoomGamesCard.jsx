@@ -35,7 +35,7 @@ const RoomGamesCard = ({ roomGame }) => {
                     </div>
                  </div>
                  <hr />
-                 <Link href={`/roomGames/${_id}`}><button className="rounded-lg bg-[--primary] px-4 py-1 font-medium text-white hover:bg-black w-full mt-3">Book Now</button></Link>
+                 <Link href={`/roomGames/${_id}`}><button className="rounded-lg bg-[--primary] px-4 py-1 font-medium text-white hover:bg-black w-full mt-3">View Details</button></Link>
                 </div>
             </div>
         </div>

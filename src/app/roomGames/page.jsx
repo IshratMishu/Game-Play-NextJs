@@ -5,7 +5,10 @@ import { PiFlagBannerFill, PiPuzzlePieceLight } from "react-icons/pi";
 import { LuHelpingHand } from "react-icons/lu";
 import Link from "next/link";
 import { getRoomGames } from "@/lib/roomGames";
-
+export const metadata = {
+    title: "Room Games",
+    description: "Gaming",
+  };
 
 const page = async () => {
     const roomGames =await getRoomGames();
@@ -40,7 +43,7 @@ const page = async () => {
                     </div>
                  </div>
                  <hr />
-                 <Link href={`/roomGames/${game._id}`}><button className="rounded-lg bg-[--primary] px-4 py-1 font-medium text-white hover:bg-black w-full mt-3">Book Now</button></Link>
+                 <Link href={`/roomGames/${game._id}`}><button className="rounded-lg bg-[--primary] px-4 py-1 font-medium text-white hover:bg-black w-full mt-3">View Details</button></Link>
                 </div>
             </div>
         </div>)

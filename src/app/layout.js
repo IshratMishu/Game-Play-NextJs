@@ -17,16 +17,17 @@ import { Toaster } from "react-hot-toast";
 // });
 
 export const metadata = {
-  title: "Play",
+  title: {
+    default: "Play",
+    template: "%s | Play"
+  },
   description: "Gaming Website",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        className="font-roboto" >
+      <body className="font-roboto" >
         <AuthProvider>
           <Navbar></Navbar>
           <div>
