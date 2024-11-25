@@ -4,9 +4,10 @@ import Link from "next/link";
 import { signIn } from 'next-auth/react'
 import { useRouter } from "next/navigation";
 import SocialSignIn from "@/Components/shared/SocialSignIn";
+import toast from "react-hot-toast";
 
 
-const page = () => {
+const SignIn = () => {
     const router = useRouter();
     const handleSignIn = async (event) => {
         event.preventDefault();
@@ -16,6 +17,7 @@ const page = () => {
             email, password, redirect: false
         });
         if (resp.status === 200) {
+            toast.success('Sign In Success!');
             router.push('/')
         };
     }
@@ -97,4 +99,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default SignIn;

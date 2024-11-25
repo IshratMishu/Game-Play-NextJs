@@ -2,8 +2,11 @@
 import SocialSignIn from "@/Components/shared/SocialSignIn";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const SignUpPage = () => {
+    const router = useRouter();
     const handleSignUp = async (event) => {
         event.preventDefault();
         const newUser = {
@@ -19,6 +22,8 @@ const SignUpPage = () => {
             },
         });
         if (resp.status === 200) {
+            toast.success('Sign Up Success! Please Login to continue...');
+            router.push('/signin');
             event.target.reset();
         }
     };
