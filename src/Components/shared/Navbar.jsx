@@ -59,12 +59,12 @@ const navItems = [
         path: "/"
     },
     {
-        title: "Gallery",
-        path: "/gallery"
-    },
-    {
         title: "Room Games",
         path: "/roomGames"
+    },
+    {
+        title: "My Bookings",
+        path: "/my-bookings"
     },
     {
         title: "News",

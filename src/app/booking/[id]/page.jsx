@@ -1,21 +1,42 @@
 'use client'
 import { getRoomGamesDetails } from "@/lib/roomGames";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 
 const Booking = ({ params }) => {
+    const router = useRouter();
     const session = useSession();
     const [ result, setResult] = useState([]);
 
     const loadGames = async () => {
-        const gameDetails = await getRoomGamesDetails(params.id);
+        const { id } = await params;
+        const gameDetails = await getRoomGamesDetails(id);
         setResult(gameDetails.result)
     };
     const { _id, price, img, title, description, players, doors, duration, puzzles, help, equipment } = result|| {};
 
     const handleBooking = async (event) => {
         event.preventDefault();
+        const newBooking ={
+            name: session?.data?.user?.name ,
+            email: session?.data?.user?.email,
+            date: event.target.date.value,
+            price: price,
+            serviceTitle: title,
+            serviceId: _id    
+        }
+        const resp = await fetch ('http://localhost:3000/booking/api/new-booking', {
+            method: 'POST' ,
+            body: JSON.stringify(newBooking),
+            headers: {
+                'content-type' : 'application/json'
+            }
+        })
+        toast.success(`${title} is booked successfully`);
+        router.push('/my-bookings')
     }
 
     useEffect(() => {

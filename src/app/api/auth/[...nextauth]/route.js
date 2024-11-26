@@ -7,6 +7,7 @@ import GitHubProvider from "next-auth/providers/github";
 
 
 const handler = NextAuth({
+  secret: process.env.NEXT_AUTH_SECRET ,
     session: {
         strategy: 'jwt',
         maxAge: 30 * 24 * 60 * 60
