@@ -1,5 +1,6 @@
 'use client'
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { GrUpdate } from "react-icons/gr";
@@ -22,7 +23,7 @@ const MyBookings = () => {
         })
         const resp = await deleted.json();
         if (resp?.response?.deletedCount > 0) {
-            toast.success('Successfully Deleted!');
+            toast.success(resp?.message);
             loadData();
         }
     }
@@ -54,7 +55,7 @@ const MyBookings = () => {
                                 <th className="py-4 px-6 border-b">{date}</th>
                                 <th className="py-4 px-6 border-b">{email}</th>
                                 <th className="py-4 px-6 border-b text-end">
-                                    <div className="flex items-center gap-2 text-[--primary] justify-end"><RiDeleteBin6Fill onClick={() => handleDelete(_id)} /> <GrUpdate /></div>
+                                    <div className="flex items-center gap-2 text-[--primary] justify-end"><RiDeleteBin6Fill onClick={() => handleDelete(_id)} /> <Link href={`/my-bookings/update/${_id}`}><GrUpdate /></Link></div>
                                 </th>
                             </tr>)
                         }

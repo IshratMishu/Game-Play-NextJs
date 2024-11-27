@@ -33,9 +33,9 @@ export default function RootLayout({ children }) {
           <div>
             {children}
           </div>
-          <Footer></Footer>
-          <Toaster />
+          <Footer></Footer>   
         </AuthProvider>
+        <Toaster />
       </body>
     </html>
   );

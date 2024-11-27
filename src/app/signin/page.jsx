@@ -2,19 +2,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import { signIn } from 'next-auth/react'
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import SocialSignIn from "@/Components/shared/SocialSignIn";
 import toast from "react-hot-toast";
 
 
 const SignIn = () => {
     const router = useRouter();
+    const searchParams = useSearchParams();
+    const path = searchParams.get('redirect');
+
     const handleSignIn = async (event) => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
         const resp = await signIn('credentials', {
-            email, password, redirect: false
+            email, password, redirect: true, callbackUrl: path ? path : '/'
         });
         if (resp.status === 200) {
             toast.success('Sign In Success!');
@@ -91,7 +94,7 @@ const SignIn = () => {
                     <hr className="flex-1 border-gray-400" />
                 </div>
                 {/* Social icons */}
-               <SocialSignIn></SocialSignIn>
+                <SocialSignIn></SocialSignIn>
                 <div>
                 </div>
             </div>
