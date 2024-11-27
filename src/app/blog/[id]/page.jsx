@@ -1,5 +1,7 @@
+'use client'
 import { getBlogDetails } from "@/lib/blogGet";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { BsDiscord } from "react-icons/bs";
 import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -7,10 +9,54 @@ import { GiBalaclava } from "react-icons/gi";
 import { MdDateRange, MdTipsAndUpdates } from "react-icons/md";
 
 
-const BlogDetails = async ({ params }) => {
-    const { id } = await params;
-    const blogDetails = await getBlogDetails(id);
-    const { _id, image, title, description, type } = blogDetails.result;
+const BlogDetails = ({ params }) => {
+    const [result, setResult] = useState([]);
+    const [showComment, setShowComment] = useState([]);
+
+    const loadBlogs = async () => {
+        const { id } = await params;
+        const blogDetails = await getBlogDetails(id);
+        setResult(blogDetails.result)
+    };
+    const { _id, image, title, description, type } = result;
+
+    const loadComment = async () => {
+        const resp = await fetch(`http://localhost:3000/blog/api/${_id}`)
+        const data = await resp.json();
+        setShowComment(data?.myComment);
+    }
+
+    const handleComment = async (event) => {
+        event.preventDefault();
+        const newComment = {
+            name: event.target.name.value,
+            comment: event.target.comment.value,
+            blogId: _id
+        }
+
+        const res = await fetch(`http://localhost:3000/blog/api/${_id}`, {
+            method: 'POST',
+            body: JSON.stringify(newComment),
+            headers: {
+                'content-type': 'application/json'
+            }
+
+        })
+        const resp = await res.json();
+        if (resp.ok) {
+            loadComment();
+        }
+
+    }
+
+
+    useEffect(() => {
+        loadBlogs();
+
+        if (_id) {
+            loadComment();
+        }
+    }, [params, _id])
 
     return (
         <div className="mt-28 max-w-screen-xl mx-auto px-8">
@@ -46,37 +92,51 @@ const BlogDetails = async ({ params }) => {
                 </div>
             </div>
 
-            <hr className="my-10"/>
+            <hr className="my-10" />
 
             <div>
-                <p className="text-2xl pb-2">Leave a Reply</p>
+                <h3 className="text-xl font-semibold">Comments</h3>
+                {showComment?.length > 0 ? (
+                    showComment?.map((comment) => (
+                        <div key={comment._id} className="p-4">
+                            <p className="font-medium">{comment.name}</p>
+                            <p>{comment.comment}</p>
+                        </div>
+                    ))
+                ) : (
+                    <p>No comments yet. Be the first to comment!</p>
+                )}
+            </div>
+
+            <div>
+                <p className="text-2xl pb-2 pt-5">Leave a Comment</p>
                 <p>Required fields are marked *</p>
 
-                    <form className="w-full space-y-6 mt-5"> 
+                <form className="w-full space-y-6 mt-5" onSubmit={handleComment}>
                     <div className="space-y-2 text-sm text-zinc-700">
-                            <label className="block font-medium">
-                                Name*
-                            </label>
-                            <input
-                                className="h-10 w-full rounded border px-3 py-2 text-sm focus:outline-none bg-transparent"
-                                name="name"
-                                type="text"
-                            />
-                        </div>
+                        <label className="block font-medium">
+                            Name*
+                        </label>
+                        <input
+                            className="h-10 w-full rounded border px-3 py-2 text-sm focus:outline-none bg-transparent"
+                            name="name"
+                            type="text"
+                        />
+                    </div>
 
-                        <div className="space-y-2 text-sm text-zinc-700">
-                            <label className="block font-medium">
-                                Comment*
-                            </label>
-                            <textarea
-                                className="min-h-[80px] w-full rounded border px-3 py-2 focus:outline-none bg-transparent"
-                                name="comment"
-                            />
-                        </div>                     
-                    
-                        <button className="rounded-md bg-[--primary] px-4 py-2 hover:bg-transparent border border-[--primary]">Post Comment </button>
-                    </form>
-                </div>
+                    <div className="space-y-2 text-sm text-zinc-700">
+                        <label className="block font-medium">
+                            Comment*
+                        </label>
+                        <textarea
+                            className="min-h-[80px] w-full rounded border px-3 py-2 focus:outline-none bg-transparent"
+                            name="comment"
+                        />
+                    </div>
+
+                    <button className="rounded-md bg-[--primary] px-4 py-2 hover:bg-transparent border border-[--primary]">Post Comment </button>
+                </form>
+            </div>
 
         </div>
     );
