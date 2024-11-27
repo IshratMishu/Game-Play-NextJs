@@ -1,5 +1,6 @@
 'use client'
 import { getBlogDetails } from "@/lib/blogGet";
+import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { BsDiscord } from "react-icons/bs";
@@ -10,6 +11,7 @@ import { MdDateRange, MdTipsAndUpdates } from "react-icons/md";
 
 
 const BlogDetails = ({ params }) => {
+    const session = useSession();
     const [result, setResult] = useState([]);
     const [showComment, setShowComment] = useState([]);
 
@@ -29,7 +31,6 @@ const BlogDetails = ({ params }) => {
     const handleComment = async (event) => {
         event.preventDefault();
         const newComment = {
-            name: event.target.name.value,
             comment: event.target.comment.value,
             blogId: _id
         }
@@ -95,18 +96,22 @@ const BlogDetails = ({ params }) => {
             <hr className="my-10" />
 
             <div>
-                <h3 className="text-xl font-semibold">Comments</h3>
+                <h3 className="text-xl font-semibold pb-4">Comments</h3>
                 {showComment?.length > 0 ? (
                     showComment?.map((comment) => (
-                        <div key={comment._id} className="p-4">
-                            <p className="font-medium">{comment.name}</p>
-                            <p>{comment.comment}</p>
+                        <div key={comment._id} className="">
+                            <div className="flex items-center gap-2">
+                                <Image width={18} height={18} className="border border-white rounded-full object-cover" alt="Photo" src={session?.data?.user?.image ? session?.data?.user?.image : 'https://i.ibb.co/31dsFpW/icon-7797704-640.webp'}></Image>
+                                <p className="font-medium">{session?.data?.user?.name}</p>
+                            </div>
+                            <p className="px-8 text-sm pb-2">{comment.comment}</p>
                         </div>
                     ))
                 ) : (
                     <p>No comments yet. Be the first to comment!</p>
                 )}
             </div>
+
 
             <div>
                 <p className="text-2xl pb-2 pt-5">Leave a Comment</p>
@@ -119,8 +124,9 @@ const BlogDetails = ({ params }) => {
                         </label>
                         <input
                             className="h-10 w-full rounded border px-3 py-2 text-sm focus:outline-none bg-transparent"
-                            name="name"
+                            defaultValue={session?.data?.user?.name}
                             type="text"
+                            disabled
                         />
                     </div>
 
