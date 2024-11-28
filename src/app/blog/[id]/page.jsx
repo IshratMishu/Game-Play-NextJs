@@ -94,7 +94,6 @@ const BlogDetails = ({ params }) => {
             </div>
 
             <hr className="my-10" />
-
             <div>
                 <h3 className="text-xl font-semibold pb-4">Comments</h3>
                 {showComment?.length > 0 ? (
