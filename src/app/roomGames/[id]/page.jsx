@@ -27,7 +27,7 @@ const RoomGamesDetails = async ({ params }) => {
             </div>
             <div className="bg-[#302f2fbf] px-4 py-6">
                 <h6 className="text-xl font-semibold">Details of {title}</h6>
-                <p className="text-sm pt-2 text-gray-400 font-Basote">{description}</p>
+                <p className="text-sm pt-2 text-[#a19e9e] font-Basote">{description}</p>
             </div>
 
             <div className="flex gap-10 text-xl font-medium justify-center py-6">

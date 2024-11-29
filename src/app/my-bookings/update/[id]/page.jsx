@@ -49,11 +49,11 @@ const Update = ({ params }) => {
                 <form className="space-y-6 border px-5 py-10 rounded" onSubmit={handleUpdate}>
                     <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-2 text-sm">
-                            <label className="text-sm font-medium text-zinc-700">
+                            <label className="text-sm font-medium">
                                 Name
                             </label>
                             <input
-                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent font-Basote"
+                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent font-Basote text-[#a19e9e]"
                                 placeholder="your name"
                                 name="name"
                                 type="text"
@@ -62,11 +62,11 @@ const Update = ({ params }) => {
                             />
                         </div>
                         <div className="space-y-2 text-sm">
-                            <label className="text-sm font-medium text-zinc-700">
+                            <label className="text-sm font-medium">
                                 Email
                             </label>
                             <input
-                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent font-Basote"
+                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent font-Basote text-[#a19e9e]"
                                 placeholder="your email"
                                 name="email"
                                 type="email"
@@ -78,22 +78,22 @@ const Update = ({ params }) => {
 
                     <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-2 text-sm">
-                            <label className="text-sm font-medium text-zinc-700">
+                            <label className="text-sm font-medium">
                                 Date
                             </label>
                             <input
-                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent font-Basote"
+                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent font-Basote text-[#a19e9e]"
                                 name="date"
                                 type="date"
                                 defaultValue={booking.date}
                             />
                         </div>
                         <div className="space-y-2 text-sm">
-                            <label className="text-sm font-medium text-zinc-700">
+                            <label className="text-sm font-medium">
                                 Price
                             </label>
                             <input
-                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent font-Basote"
+                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent font-Basote text-[#a19e9e]"
                                 name="price"
                                 type="text"
                                 defaultValue={booking.price}

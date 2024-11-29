@@ -13,7 +13,7 @@ const Banner = () => {
     };
 
     return (
-        <div className="bg-cover min-h-[600px] text-white" style={{
+        <div className="bg-cover min-h-[600px]" style={{
             backgroundImage: "linear-gradient(to right, rgba(0, 0, 0, 0.9) 20%, rgba(5, 121, 33, 0.2) 60%), url('/assets/bg1.jpg')"
         }}>
             <div className="flex max-w-screen-xl mx-auto pt-52 pl-20 items-center justify-between">

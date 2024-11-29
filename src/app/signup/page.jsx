@@ -46,8 +46,7 @@ const SignUpPage = () => {
                                 name="name"
                                 type="name"
                                 placeholder="your name"
-                                className="h-10 w-full rounded bg-transparent pl-10 outline-none border border-[--primary]"
-
+                                className="h-10 w-full rounded bg-transparent pl-10 outline-none border border-[--primary] font-Basote"
                             />
 
                             <span className="absolute left-2 top-2">
@@ -73,7 +72,7 @@ const SignUpPage = () => {
                                 name="email"
                                 type="email"
                                 placeholder="example@gmail.com"
-                                className="h-10 w-full rounded bg-transparent pl-10 outline-none border border-[--primary]"
+                                className="h-10 w-full rounded bg-transparent pl-10 outline-none border border-[--primary] font-Basote"
 
                             />
 
@@ -96,7 +95,7 @@ const SignUpPage = () => {
                                 name="password"
                                 type="password"
                                 placeholder=".............."
-                                className="h-10 w-full rounded bg-transparent pl-10 outline-none border border-[--primary]" />
+                                className="h-10 w-full rounded bg-transparent pl-10 outline-none border border-[--primary] font-Basote" />
 
                             <span className="absolute left-2 top-2">
                                 <svg viewBox="0 0 24 24" fill="none" className="inline-block w-6" xmlns="http://www.w3.org/2000/svg">
@@ -111,7 +110,7 @@ const SignUpPage = () => {
                     <button type="submit" className="rounded-lg bg-[--primary] px-6 py-2 font-medium mt-5 w-full border border-[--primary] hover:bg-transparent">Sign Up</button>
                 </form>
 
-                <div className="text-center text-sm text-zinc-700 pt-5">
+                <div className="text-center text-sm text-[#a19e9e] pt-5 font-Basote">
                     Already have an account?
                     <Link href="/signin" className="ml-1 font-semibold underline text-[--primary]">
                         Signin

@@ -15,9 +15,9 @@ const Blog = async() => {
                 {
                     blogs.map((oneBlog, index) => <div key={index} className="mx-auto p-6 space-y-2 relative">
                         <Image height={100} width={200} src={oneBlog.image} alt="photo" className="w-full"></Image>
-                        <p className="absolute top-52 py-2 px-4 bg-black">{oneBlog.type}</p>
+                        <p className="absolute top-52 py-2 px-4 bg-[#000D06]">{oneBlog.type}</p>
                         <h6 className="text-xl font-medium font-Basote">{oneBlog.title}</h6>
-                        <p className="text-sm font-Basote">{oneBlog.description.slice(0, 150)}. . . .</p>
+                        <p className="text-sm font-Basote text-[#a19e9e]">{oneBlog.description.slice(0, 150)}. . . .</p>
                         <Link href={`/blog/${oneBlog._id}`}><button className="font-semibold text-[--primary] flex items-center hover:underline mt-4">Read More <MdKeyboardDoubleArrowRight /></button></Link>
                     </div>)
                 }

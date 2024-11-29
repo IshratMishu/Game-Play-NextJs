@@ -49,7 +49,7 @@ const MyBookings = () => {
                     </thead>
                     <tbody>
                         {
-                            booking?.map(({ _id, serviceTitle, price, date, email }) => <tr key={_id} className="text-sm font-Basote">
+                            booking?.map(({ _id, serviceTitle, price, date, email }) => <tr key={_id} className="text-sm font-Basote text-[#a19e9e]">
                                 <th className="py-4 px-6 border-b text-start">{serviceTitle}</th>
                                 <th className="py-4 px-6 border-b">{price}</th>
                                 <th className="py-4 px-6 border-b">{date}</th>

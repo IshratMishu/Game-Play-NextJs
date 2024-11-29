@@ -42,8 +42,9 @@ const Latest = () => {
 
     return (
         <div className="bg-cover max-w-screen-xl mx-auto mt-10 relative">
-            <h1 className="text-center text-8xl font-bold tracking-wider text-[#302f2fbf]">PLAY NOW</h1>
-            <div className="grid grid-cols-3 gap-5">
+            <h1 className="text-center text-4xl font-bold tracking-wider">PLAY NOW</h1>
+            <p className="text-center text-sm pt-4 font-Basote">Try our online games!</p>
+            <div className="grid grid-cols-3 gap-5 mt-5">
                 {
                     gameItems.map((game, index) => <div key={game.name} className="cursor-pointer text-center space-y-4 p-4 rounded-md relative group">
                         <Image className="mx-auto h-48" width={320} height={100} src={`/assets/${index + 1}.png`} alt="photos"></Image>

@@ -21,8 +21,8 @@ const page = async () => {
                     <Image height={200} width={350} alt="photo" src={game.img} className="object-cover h-48 rounded-t-lg"></Image>
                 <div className="px-4 pb-3 space-y-2">
                 <h1 className="text-lg font-medium">{game.title}</h1>
-                <p className="text-xs font-medium">{game.price}</p>
-                 <div className="flex justify-between text-gray-400 text-sm">
+                <p className="text-sm font-medium">{game.price}</p>
+                 <div className="flex justify-between text-[#a19e9e] text-sm">
                  <div className="space-y-1">
                         <p className="flex items-center gap-1"><GiTabletopPlayers className="text-white"/>{game.players}</p>
                         <p className="flex items-center gap-1"><BsDoorClosed className="text-white"/>{game.doors}</p>
@@ -35,7 +35,7 @@ const page = async () => {
                     </div>
                  </div>
                  <hr />
-                 <Link href={`/roomGames/${game._id}`}><button className="rounded-lg bg-[--primary] px-4 py-1 font-medium text-white hover:bg-black w-full mt-3">View Details</button></Link>
+                 <Link href={`/roomGames/${game._id}`}><button className="rounded-lg bg-[--primary] px-4 py-1 font-medium hover:bg-[#000D06] w-full mt-3">View Details</button></Link>
                 </div>
             </div>
         </div>)

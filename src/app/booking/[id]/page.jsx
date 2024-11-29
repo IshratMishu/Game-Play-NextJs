@@ -47,17 +47,17 @@ const Booking = ({ params }) => {
         <div className="space-y-6 max-w-screen-xl mx-auto mt-28 px-16">
             <div className="space-y-1 text-center">
                 <h3 className="text-xl font-medium">Book {title}</h3>
-                <p className="text-sm text-zinc-500 font-Basote">Please fill in the form to book {title}.</p>
+                <p className="text-sm text-[#a19e9e] font-Basote">Please fill in the form to book {title}.</p>
             </div>
             <div>
                 <form className="space-y-6 border px-5 py-10 rounded" onSubmit={handleBooking}>
                     <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-2 text-sm">
-                            <label className="text-sm font-medium text-zinc-700">
+                            <label className="text-sm font-medium">
                                 Name
                             </label>
                             <input
-                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent font-Basote"
+                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent font-Basote text-[#a19e9e]"
                                 placeholder="your name"
                                 name="name"
                                 type="text"
@@ -65,11 +65,11 @@ const Booking = ({ params }) => {
                             />
                         </div>
                         <div className="space-y-2 text-sm">
-                            <label className="text-sm font-medium text-zinc-700">
+                            <label className="text-sm font-medium">
                                 Email
                             </label>
                             <input
-                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent font-Basote"
+                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent font-Basote text-[#a19e9e]"
                                 placeholder="your email"
                                 name="email"
                                 type="email"
@@ -80,21 +80,21 @@ const Booking = ({ params }) => {
 
                     <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-2 text-sm">
-                            <label className="text-sm font-medium text-zinc-700">
+                            <label className="text-sm font-medium">
                                 Date
                             </label>
                             <input
-                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent font-Basote"
+                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent font-Basote text-[#a19e9e]"
                                 name="date"
                                 type="date"
                             />
                         </div>
                         <div className="space-y-2 text-sm">
-                            <label className="text-sm font-medium text-zinc-700">
+                            <label className="text-sm font-medium">
                                 Price
                             </label>
                             <input
-                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent font-Basote"
+                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent font-Basote text-[#a19e9e]"
                                 name="price"
                                 type="text"
                                 defaultValue={price}
@@ -102,7 +102,7 @@ const Booking = ({ params }) => {
                             />
                         </div>
                     </div>
-                    <button className="rounded-md bg-[--primary] py-1 w-full hover:bg-transparent border border-[--primary]">Book</button>
+                    <button className="rounded-md bg-[--primary] py-1 w-full hover:bg-transparent border border-[--primary]">Place Order</button>
                 </form>
             </div>
         </div>
