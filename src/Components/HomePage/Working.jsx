@@ -7,8 +7,7 @@ const Working = () => {
         <div className='flex gap-10 items-center max-w-screen-xl mx-auto px-8 mt-28'>
             <div className='w-3/5 space-y-4'>
                 <h1 className='text-3xl font-semibold'>How our room game works!</h1>
-                <p className='text-sm pb-3'>Our Room Game is a captivating offline gaming experience where players navigate through a virtual room filled with exciting puzzles and challenges. Designed for single-player adventures.</p>
-                <div className='flex items-center gap-4'>
+                <div className='flex items-center gap-4 font-Basote'>
                     <FaUnlockAlt className='bg-[--primary] text-6xl px-3 rounded-full' />
                     <div>
                         <h3 className='text-lg font-semibold'>You Are Locked In</h3>
@@ -16,7 +15,7 @@ const Working = () => {
                     </div>
                 </div>
 
-                <div className='flex items-center gap-4'>
+                <div className='flex items-center gap-4 font-Basote'>
                     <FaClock className='bg-[--primary] text-6xl px-3 rounded-full' />
                     <div>
                         <h3 className='text-lg font-semibold'>The Clock Is Ticking</h3>
@@ -24,7 +23,7 @@ const Working = () => {
                     </div>
                 </div>
 
-                <div className='flex items-center gap-4'>
+                <div className='flex items-center gap-4 font-Basote'>
                     <FaDoorOpen className='bg-[--primary] text-6xl px-3 rounded-full' />
                     <div>
                         <h3 className='text-lg font-semibold'>Escape Quickly</h3>

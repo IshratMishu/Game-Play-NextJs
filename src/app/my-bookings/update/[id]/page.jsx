@@ -53,7 +53,7 @@ const Update = ({ params }) => {
                                 Name
                             </label>
                             <input
-                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent"
+                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent font-Basote"
                                 placeholder="your name"
                                 name="name"
                                 type="text"
@@ -66,7 +66,7 @@ const Update = ({ params }) => {
                                 Email
                             </label>
                             <input
-                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent"
+                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent font-Basote"
                                 placeholder="your email"
                                 name="email"
                                 type="email"
@@ -82,7 +82,7 @@ const Update = ({ params }) => {
                                 Date
                             </label>
                             <input
-                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent"
+                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent font-Basote"
                                 name="date"
                                 type="date"
                                 defaultValue={booking.date}
@@ -93,7 +93,7 @@ const Update = ({ params }) => {
                                 Price
                             </label>
                             <input
-                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent"
+                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent font-Basote"
                                 name="price"
                                 type="text"
                                 defaultValue={booking.price}

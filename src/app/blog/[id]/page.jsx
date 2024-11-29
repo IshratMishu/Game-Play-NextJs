@@ -1,4 +1,5 @@
 'use client'
+import Sidebar from "@/Components/sidebar/Sidebar";
 import { getBlogDetails } from "@/lib/blogGet";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
@@ -72,7 +73,9 @@ const BlogDetails = ({ params }) => {
                 </div>
             </div>
 
-            <div className="mt-16 space-y-4">
+         <div className="mt-16 flex gap-10">
+         <div>
+          <div className="space-y-4">
                 <Image height={300} width={600} src={image} alt="photo" className=" "></Image>
                 <h2 className="text-2xl font-semibold">{title}</h2>
                 <p className="text-sm text-zinc-400">{description}</p>
@@ -142,6 +145,13 @@ const BlogDetails = ({ params }) => {
                     <button className="rounded-md bg-[--primary] px-4 py-2 hover:bg-transparent border border-[--primary]">Post Comment </button>
                 </form>
             </div>
+            </div>
+
+            <div>
+<Sidebar></Sidebar>
+          </div>
+
+         </div>
 
         </div>
     );

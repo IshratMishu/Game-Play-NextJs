@@ -21,13 +21,13 @@ const RoomGamesDetails = async ({ params }) => {
     return (
         <div className="mt-28 max-w-screen-xl mx-auto px-8 relative">
             <Image height={100} width={1280} src={img} alt='photo' className="object-cover h-96 mx-auto"></Image>
-            <div className="absolute top-52 px-10">
+            <div className="absolute top-56 px-10">
                 <p className="text-2xl font-semibold">{title}</p>
                 <p className="font-semibold bg-[--primary] px-2 py-1">{price}</p>
             </div>
             <div className="bg-[#302f2fbf] px-4 py-6">
                 <h6 className="text-xl font-semibold">Details of {title}</h6>
-                <p className="text-sm pt-2 text-gray-400">{description}</p>
+                <p className="text-sm pt-2 text-gray-400 font-Basote">{description}</p>
             </div>
 
             <div className="flex gap-10 text-xl font-medium justify-center py-6">

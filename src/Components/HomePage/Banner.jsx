@@ -18,8 +18,8 @@ const Banner = () => {
         }}>
             <div className="flex max-w-screen-xl mx-auto pt-52 pl-20 items-center justify-between">
                 <div className="space-y-4">
-                    <h1 className="text-6xl font-semibold">Discover A New <br /> Era Of Cool</h1>
-                    <p className="text-5xl font-medium text-[--primary]">
+                    <h1 className="text-5xl font-semibold">Discover A New <br /> Era Of Cool</h1>
+                    <p className="text-4xl font-medium text-[--primary]">
                         <Typewriter
                             words={['Games', 'Challenges!', 'Levels', 'Legends!']}
                             loop={true}
@@ -30,7 +30,7 @@ const Banner = () => {
                             delaySpeed={1000}
                         />
                     </p>
-                    <p className="text-xl">Bored Of searching online games? Try us.</p>
+                    <p className="text-xl font-Basote">Bored of searching online games? Try us.</p>
                     <button className="text-xl font-semibold px-4 py-1 rounded-full flex items-center gap-1 border border-[--primary] hover:bg-[--primary]">Let’s Play <MdKeyboardDoubleArrowRight /></button>
                 </div>
 

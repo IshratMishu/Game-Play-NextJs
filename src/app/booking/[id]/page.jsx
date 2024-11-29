@@ -47,7 +47,7 @@ const Booking = ({ params }) => {
         <div className="space-y-6 max-w-screen-xl mx-auto mt-28 px-16">
             <div className="space-y-1 text-center">
                 <h3 className="text-xl font-medium">Book {title}</h3>
-                <p className="text-sm text-zinc-500">Please fill in the form to book {title}.</p>
+                <p className="text-sm text-zinc-500 font-Basote">Please fill in the form to book {title}.</p>
             </div>
             <div>
                 <form className="space-y-6 border px-5 py-10 rounded" onSubmit={handleBooking}>
@@ -57,7 +57,7 @@ const Booking = ({ params }) => {
                                 Name
                             </label>
                             <input
-                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent"
+                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent font-Basote"
                                 placeholder="your name"
                                 name="name"
                                 type="text"
@@ -69,7 +69,7 @@ const Booking = ({ params }) => {
                                 Email
                             </label>
                             <input
-                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent"
+                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent font-Basote"
                                 placeholder="your email"
                                 name="email"
                                 type="email"
@@ -84,7 +84,7 @@ const Booking = ({ params }) => {
                                 Date
                             </label>
                             <input
-                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent"
+                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent font-Basote"
                                 name="date"
                                 type="date"
                             />
@@ -94,7 +94,7 @@ const Booking = ({ params }) => {
                                 Price
                             </label>
                             <input
-                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent"
+                                className="flex h-10 w-full rounded-md border px-3 py-2  focus-visible:outline-none bg-transparent font-Basote"
                                 name="price"
                                 type="text"
                                 defaultValue={price}
