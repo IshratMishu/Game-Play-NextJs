@@ -7,7 +7,7 @@ const Blog = async() => {
     const blogs = await getBlog();
 
     return (
-        <div className="mt-16 max-w-screen-xl mx-auto">
+        <div className="mt-28 max-w-screen-xl mx-auto">
             <h1 className="text-center text-4xl font-medium">Blog</h1>
             <p className="text-center text-sm pt-4">Read our unique challenges and unlock thrilling adventures in every room.</p>
             <div className="grid grid-cols-3 gap-5 mt-10">
