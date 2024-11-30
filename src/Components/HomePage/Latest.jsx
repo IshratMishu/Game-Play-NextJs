@@ -47,7 +47,7 @@ const Latest = () => {
             <div className="grid grid-cols-3 gap-5 mt-5">
                 {
                     gameItems.map((game, index) => <div key={game.name} className="cursor-pointer text-center space-y-4 p-4 rounded-md relative group">
-                        <Image className="mx-auto h-48" width={320} height={100} src={`/assets/${index + 1}.png`} alt="photos"></Image>
+                        <Image className="mx-auto h-48 shadow shadow-[--primary]" width={350} height={100} src={`/assets/${index + 1}.png`} alt="photos"></Image>
 
                         <IoPlaySharp onClick={() => handlePlayGame(game)} className="absolute opacity-0 group-hover:opacity-100 transition-all duration-200 delay-100 top-16 left-40 text-6xl shadow-md shadow-black border-4 border-[--primary] rounded-full p-2" />
 
